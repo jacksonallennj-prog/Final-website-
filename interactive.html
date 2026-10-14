@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Golf Studio | Range Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Unified Modern Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-logo">⚡ APEX GOLF</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Course & Gear</a></li>
+        <li><a href="interactive.html" class="active">Range Simulator</a></li>
+      </ul>
+      <button class="theme-btn" id="theme-btn">🌙 Theme</button>
+    </nav>
+
+    <div class="hero-header">
+      <div class="hero-badge">Interactive Tech Center</div>
+      <h1>Range & Launch Simulator</h1>
+      <p class="hero-subtitle">Test our smart caddie engine, ask the oracle, or launch drives on the range.</p>
+    </div>
+
+    <div class="container">
+      
+      <!-- Feature 1 & 2: Alert + Smart Caddie Decision Logic -->
+      <div class="card">
+        <h2>🧠 Smart Caddie Yardage Assistant</h2>
+        <p style="margin-bottom: 20px;">Unsure which club to pull? Type your distance to the pin below!</p>
+        
+        <button class="action-btn outline-btn" id="alert-btn" style="margin-bottom: 20px;">📢 Caddie Strategy Tip</button>
+
+        <div class="input-group">
+          <label for="user-input">Distance to Pin (in yards):</label>
+          <input type="number" id="user-input" placeholder="e.g. 165" class="modern-input">
+        </div>
+
+        <button class="action-btn glow-btn" id="submit-btn" style="margin-top: 15px;">Calculate Recommendation</button>
+        <p id="display-text" class="status-box">Your caddie suggestion will display here...</p>
+      </div>
+
+      <!-- Feature 3: Oracle Predictor -->
+      <div class="card">
+        <h2>🔮 The Golf Oracle</h2>
+        <p>Think of a question about your game today and ask the digital oracle!</p>
+        <button class="action-btn glow-btn" id="eight-ball-btn">Consult Oracle</button>
+        <p id="eight-ball-result" class="status-box">The Oracle awaits your shot...</p>
+      </div>
+
+      <!-- Feature 4: Interactive Canvas Launch Game -->
+      <div class="card game-card">
+        <h2>🏌️ Interactive Launch Simulator</h2>
+        <p>Press <strong>SWING CLUB</strong> to launch your ball down the fairway! Target greens give bonus score points.</p>
+
+        <div class="game-hud">
+          <div class="hud-item">
+            <span class="hud-label">LAST DRIVE</span>
+            <span class="hud-value" id="drive-dist">0 YDS</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-label">TOTAL SCORE</span>
+            <span class="hud-value" id="game-score">0</span>
+          </div>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="golf-canvas" width="500" height="320"></canvas>
+        </div>
+
+        <button class="action-btn glow-btn swing-btn-large" id="swing-btn">⛳ SWING CLUB!</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
